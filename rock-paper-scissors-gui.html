@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta charset="UTF-8" />
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <header>
+            <h1><span class='gameTitle'>OCEAN FRIENDS</span> Rock Paper Scissors</h1>
+        </header>
+
+        <main>
+            <div id='board'>
+                <div>
+                    <h2 id="playerSelection">Player Plays: </h2>
+                </div>
+                <div class='buttons'>
+                    <img class='choices' src='turtle.svg' id='rock'>
+                    <img class='choices' src='stingray.svg' id='paper'>
+                    <img class='choices' src='crab.svg' id='scissors'>
+                </div>
+
+                <div>
+                    <h2 id="computerSelection">Computer Plays: </h2>
+                </div>
+                <img id='computerImage' src='question-mark.png'>
+            </div>
+        </main>
+        <section id='results'></section>
+        <section id='scores'></section>
+
+        <footer>
+            <p>Sea background art by <a href="https://olgaslab.com">Olga Romero Lopez</a>.</p>
+            <p>Icons by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.</p>
+        </footer>
+
+
+
+        <script src="rock-paper-scissors-gui.js"></script>
+    </body>
+</html>

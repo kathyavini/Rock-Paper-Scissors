@@ -1,0 +1,123 @@
+* {
+       /* border: 2px solid mediumseagreen; */
+        padding: 0;
+        margin: 0;
+    }
+
+img.choices {
+    height: 20vh;
+    width:20vh;
+    border: 8px solid #F4D35E;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+img.selected {
+    height: 30vh;
+    width: 30vh;
+}
+
+img#computerImage {
+    height: 30vh;
+    width:30vh;
+    border: 8px solid #EE964B;
+    border-radius: 50%; 
+}
+
+#playerSelection, #computerSelection {
+    display: inline-block;
+}
+
+span {
+    font-weight: 900;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+span {
+    font-weight: 900;
+}
+
+span.gameTitle {
+    color: #EE964B;
+    text-decoration: underline;
+    text-decoration-color: #F4D35E;
+    text-decoration-style: wavy;
+}
+
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #F4D35E;
+}
+    
+body {
+    color: #EE964B;
+    background-image: url("sea_background/PNG/foreground.png"),
+                    url("sea_background/PNG/mid_background.png"),
+                    url("sea_background/PNG/farground.png"),
+                    url("sea_background/PNG/sea_background.png");
+    background-position: top left, 0px 0px;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100px 100px 200px 100px 200px 100px;
+
+}
+
+header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#board {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#results {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#scores {
+    white-space: pre;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+footer {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
