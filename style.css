@@ -1,16 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Fredericka+the+Great&display=swap');
 
 * {
-       /* border: 2px solid mediumseagreen; */
-        padding: 0;
-        margin: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
 }
 
 
 body {
+    height: 100%;
+    width: 100%;
     font-family: "Calistoga", "Times New Roman", serif;
     color: #EE964B;
-    background-color:#0299D4;
+    background-color:#0280d4;
+    background-image: url("./oceans-illustration.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+
+#mobile-message {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1920px;
+}
+
+.buttons {
+    height: 17rem;
 }
 
 a {
@@ -45,7 +77,7 @@ img#computerImage {
 }
 
 h1, h2, h3 {
-    color: black;
+    color: white;
 }
 
 h2, h3 {
@@ -59,64 +91,139 @@ h1 {
 }
 
 span.gameTitle {
-    color: black;
+    color: white;
     font-size: 4.5rem;
 }
 
-
-body {
-    background-image: url("sea_background/PNG/foreground.png"),
-                    url("sea_background/PNG/mid_background.png"),
-                    url("sea_background/PNG/farground.png"),
-                    url("sea_background/PNG/sea_background.png");
-    background-position: top left, 0px 0px;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 100px 100px 200px 100px 200px 100px;
-
-}
-
-header {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #board {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 1rem;
 }
 
-#results {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
+#scoreboard {
+    width: 30rem;
+    height: 30rem;
+    padding: 2rem;
 }
 
 #scores {
     white-space: pre;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 5;
 }
 
 footer {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 6;
-    grid-row-end: 7;
+    width: 100%;
+    background-color: #0298d44f;
+    margin-top: auto;
+}
+
+/* For mobile */
+@media screen and (max-width: 600px) {
+    /* Took a lot of fussing and I'm not sure whether it was the overflow: hidden
+    on the two parents, or the 100vh and 100vw on the direct parent of the container
+    that made the snapping work, but at last!*/
+    html {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    
+    body {
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    #container {
+        height: 100%;
+        width: 100%;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 1rem;
+        overflow-y: auto;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    header {
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: start;
+        flex: none;
+        padding-top: 40%;
+    }
+
+    #mobile-message {
+        display: block;
+        margin-top: 4rem;
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+        gap: 0.5rem;
+        flex-flow: column wrap;
+        padding: 1rem 0 0 0;
+        scroll-snap-align: start;
+        flex: none;
+    }
+
+    span.gameTitle {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2, h3 {
+        font-size: 1.3rem;
+    }
+
+    img.choices {
+        height: 4.5rem;
+        width: auto;
+    }
+
+    img.selected {
+        height: 5.5rem;
+        width: auto;
+    }
+
+    img#computerImage {
+        height: 8rem;
+        width:auto;
+    }
+
+    img.choices,
+    img.selected,
+    img#computerImage {
+        border-width: 4px;
+    }
+
+    .buttons {
+        height: 6rem;
+    }
+
+    #board {
+        width: 100%;
+        height: 50%
+    }
+
+    #scoreboard {
+        width: 100%;
+        height: 40%;
+        padding-top: 3rem;
+    }
+
+    footer {
+        width: 100vw;
+        background-color: #0298d44f;
+        margin: 0;
+        scroll-snap-align: start;
+        flex: none;
+    }
+
 }

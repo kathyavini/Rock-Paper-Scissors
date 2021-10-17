@@ -9,37 +9,36 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <h1><span class='gameTitle'>OCEAN FRIENDS</span></h1>
-            <h1>Rock, Paper, Scissors</h1>
-        </header>
+        <div id="container">
+            <header>
+                <h1><span class='gameTitle'>OCEAN FRIENDS</span></h1>
+                <h1>Rock, Paper, Scissors</h1>
+                <h3 id="mobile-message">Swipe right to play</h3>
+            </header>
 
-        <main>
-            <div id='board'>
-                <div>
+            <main>
+                <div id='board'>
                     <h2 id="playerSelection">Player Plays: </h2>
-                </div>
-                <div class='buttons'>
-                    <img class='choices' src='turtle.svg' id='rock'>
-                    <img class='choices' src='stingray.svg' id='paper'>
-                    <img class='choices' src='crab.svg' id='scissors'>
-                </div>
+                    <div class='buttons'>
+                        <img class='choices' src='turtle.svg' id='rock'>
+                        <img class='choices' src='stingray.svg' id='paper'>
+                        <img class='choices' src='crab.svg' id='scissors'>
+                    </div>
 
-                <div>
                     <h2 id="computerSelection">Computer Plays: </h2>
+                    <img id='computerImage' src='question-mark.png'>
                 </div>
-                <img id='computerImage' src='question-mark.png'>
-            </div>
-        </main>
-        <section id='results'></section>
-        <section id='scores'></section>
+                <div id="scoreboard">
+                    <section id='results'></section>
+                    <section id='scores'></section>
+                </div>
+            </main>
 
-        <footer>
-            <p>Sea background art by <a href="https://olgaslab.com">Olga Romero Lopez</a>.</p>
-            <p>Icons by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.</p>
-        </footer>
+            <footer>
+                <p>Icons and watercolor vector by freepik: <a href='https://www.freepik.com/vectors/watercolor'>www.freepik.com</a></p>
 
-
+            </footer>
+        </div>
 
         <script src="rock-paper-scissors-gui.js"></script>
     </body>
